@@ -1,0 +1,30 @@
+
+> fintech-usage-recommender@1.0.0 test
+> tsc -p tsconfig.node.json && node --test .test-build/tests/*.test.js
+
+✔ seeded generation is reproducible and different seeds change sessions (82.546079ms)
+✔ generation preserves referential integrity and finite declared preferences (15.882814ms)
+✔ cohort and period filters affect counts and every daily bucket (29.210267ms)
+✔ empty analytics returns zero KPIs and complete chart buckets without NaN (10.471278ms)
+✔ D7 denominator includes matured first observations, excludes immature users (2.679128ms)
+✔ ranking metrics match a hand-calculated list (0.25247ms)
+✔ short ranking counts missing slots as misses and empty ground truth scores zero (0.164553ms)
+✔ invalid weights are safe and zero weights use a content fallback (0.195488ms)
+✔ large finite weights retain a unit sum without overflow (0.128889ms)
+✔ popularity-only explanations never claim interest evidence (29.358581ms)
+✔ zero evidence reports an explicit default order instead of a fabricated preference (16.136307ms)
+✔ exclusions never leak into recommendations; ranking is deterministic and unique (23.738061ms)
+✔ weighted explanation components add to score and are finite (19.145447ms)
+✔ cold-start uses interests and is stable when no events are available (13.158507ms)
+✔ excluding all apps yields an empty result (11.216ms)
+✔ append-only future sessions cannot alter a model fitted before cutoff (20.905688ms)
+✔ evaluation holds out final 14 days and preserves a frozen train-only fit (90.12524ms)
+✔ evaluation is reproducible and never relabels business uplift from synthetic ranking metrics (111.897059ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 386.149573

@@ -1,0 +1,11 @@
+# Static operations and free-range constraints
+
+The deployed service is a Render Static Site with npm ci + npm run build and publish path dist. Node 22.19.0 is pinned for Render builds. All runtime calculations occur in the visitor's browser. No backend, DB, cache, custom domain or API-key product is created. Auto-deploy is disabled to avoid builds from screenshot/document-only commits.
+
+The Render connector does not expose workspace billing/card status or build-minute spend-limit settings. Service type alone cannot guarantee perpetual zero cost. Existing monthly service bandwidth was read through connector metrics before creation and was under 2 MB at that snapshot. This is usage evidence, not a budget cap. Static sites still share workspace bandwidth and build allowances with existing demos. Do not add a card, upgrade a plan or enable paid resources for this demo. If a payment method is already registered, review bandwidth overage behavior and set the pipeline spend limit to zero in the dashboard. A build spend cap does not cap bandwidth.
+
+Public Render documentation: https://render.com/docs/static-sites ; https://render.com/docs/outbound-bandwidth ; https://render.com/docs/build-pipeline . Current documented Hobby bandwidth allowance is 5 GB/month, shared by the workspace. Without a payment method, usage that would incur charges causes services to be disabled rather than billed. Validate current settings in the dashboard before relying on this as a strict zero-charge guarantee.
+
+Use manual deployment only after npm test, npm run build, and npm run test:browser pass. A live status alone is insufficient: confirm root HTML, report JSON, hashed JS/CSS/fonts and visible controls. docs/deployment.json records what was checked. The committed render.yaml is a reproducible Blueprint alternative; security headers in that file are a Blueprint configuration, not a claim that the limited direct-creation connector applied them.
+
+Rollback uses a previous known working commit and a manual redeploy; never force-push over unrelated changes. Keep the public report and README consistent with the deployed code. Re-running npm run evaluate changes machine-dependent benchmark timings, so metric reproducibility must be checked separately from latency values.

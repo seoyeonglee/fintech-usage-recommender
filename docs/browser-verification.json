@@ -1,0 +1,24 @@
+{
+  "base": "http://127.0.0.1:4173",
+  "checks": [
+    "overview renders with bundled fonts",
+    "cohort changes live aggregates",
+    "period changes chart buckets",
+    "app detail dialog and Escape",
+    "CSV download with filtered data rows",
+    "weights recalculate recommendation scores",
+    "seen-app exclusion",
+    "cold-start path",
+    "evaluation loads committed measured report",
+    "essential small-text contrast >= 4.5 in all three views",
+    "three mobile views without horizontal overflow",
+    "mobile keyboard Enter, ArrowRight and Space; reduced-motion",
+    "no external runtime requests",
+    "zero browser runtime errors"
+  ],
+  "errors": [],
+  "viewports": [
+    "1440x1100",
+    "390x844"
+  ]
+}

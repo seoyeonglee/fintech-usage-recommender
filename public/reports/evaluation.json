@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "dataKind": "synthetic",
+  "seed": 2401,
+  "usersEvaluated": 320,
+  "coldStartUsers": 20,
+  "k": 3,
+  "split": {
+    "trainLastDay": 69,
+    "testFirstDay": 70,
+    "trainEnd": "2026-09-16",
+    "testStart": "2026-09-17",
+    "testEnd": "2026-09-30",
+    "trainEvents": 10730,
+    "testEvents": 4114
+  },
+  "models": [
+    {
+      "precision": 0.6406249999999996,
+      "recall": 0.4368750000000003,
+      "ndcg": 0.6500414923023218,
+      "id": "popularity",
+      "name": "Popularity",
+      "coverage": 0.375,
+      "ci95": [
+        0.6148088066875013,
+        0.6807415464698753
+      ]
+    },
+    {
+      "precision": 0.8197916666666651,
+      "recall": 0.5675520833333327,
+      "ndcg": 0.8363258688174129,
+      "id": "content",
+      "name": "Content only",
+      "coverage": 1,
+      "ci95": [
+        0.813780480025741,
+        0.8591869866838276
+      ]
+    },
+    {
+      "precision": 0.8249999999999987,
+      "recall": 0.5714062499999996,
+      "ndcg": 0.8411006670131977,
+      "id": "hybrid",
+      "name": "Hybrid + diversity",
+      "coverage": 1,
+      "ci95": [
+        0.8196993367033022,
+        0.8616991816336418
+      ]
+    }
+  ],
+  "cohorts": [
+    {
+      "id": "professional",
+      "name": "직장인",
+      "n": 80,
+      "ndcg": 0.8191340159247155,
+      "baselineNdcg": 0.7947629124140643
+    },
+    {
+      "id": "planner",
+      "name": "자산관리형",
+      "n": 80,
+      "ndcg": 0.8507680318494311,
+      "baselineNdcg": 0.5863813423813846
+    },
+    {
+      "id": "shopper",
+      "name": "소비관리형",
+      "n": 80,
+      "ndcg": 0.8418379096687939,
+      "baselineNdcg": 0.4360791037841061
+    },
+    {
+      "id": "global",
+      "name": "글로벌 이용자",
+      "n": 80,
+      "ndcg": 0.8526627106098493,
+      "baselineNdcg": 0.7829426106297326
+    }
+  ],
+  "coldStart": {
+    "n": 20,
+    "hybrid": {
+      "precision": 0.7499999999999999,
+      "recall": 0.605,
+      "ndcg": 0.7796081910965864
+    },
+    "popularity": {
+      "precision": 0.5666666666666667,
+      "recall": 0.4391666666666666,
+      "ndcg": 0.567319681505689
+    }
+  },
+  "limitations": [
+    "Synthetic behavioral distribution; not a representative financial market sample.",
+    "No claim of real-world business uplift.",
+    "Repeated-app relevance is allowed; this is not a novel-app-discovery benchmark.",
+    "Weights were fixed before evaluation; this holdout is not used for tuning.",
+    "D7 retention measures first-observed sessions, not verified registration."
+  ],
+  "dataset": {
+    "fingerprint": "3b77d9f8a36146fd3f69dea0fbfffdbd31401b63319f786e3999767a0c9e98a7",
+    "users": 320,
+    "apps": 8,
+    "days": 84,
+    "sessions": 14844
+  },
+  "benchmark": {
+    "fitMs": 6.40481299999999,
+    "medianMs": 0.011542999999988979,
+    "p95Ms": 0.03253700000000492,
+    "samples": 3200,
+    "environment": "linux/x64, Node v24.19.0, INTEL(R) XEON(R) PLATINUM 8573C",
+    "method": "Single-process warm Node timing of recommend(k=3), 320 users × 10 passes. No network, concurrent load or rendering; not a production SLA."
+  }
+}
