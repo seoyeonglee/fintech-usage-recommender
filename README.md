@@ -2,11 +2,13 @@
 
 **핀테크 앱 이용 데이터를 분석하고, 추천 순위가 만들어지는 이유까지 확인하는 인터랙티브 포트폴리오.**
 
-[라이브 데모](https://seoyoung-finscope.onrender.com) · [추천 엔진](src/domain/recommender.ts) · [측정 결과 JSON](public/reports/evaluation.json) · [검증 기록](docs/browser-verification.json)
+[라이브 데모](https://seoyoung-finscope.onrender.com/) · [추천 엔진](src/domain/recommender.ts) · [측정 결과 JSON](public/reports/evaluation.json) · [검증 기록](docs/browser-verification.json) · [성공한 CI](https://github.com/seoyeonglee/fintech-usage-recommender/actions/runs/37001738868)
 
 ![사용량 비교 대시보드](docs/screenshots/overview.png)
 
 > 8개의 가상 앱 · 320명의 합성 이용자 · 84일 · **14,844개 실제 생성 세션**. 은행 계좌나 실제 고객 데이터를 연결하지 않습니다. 공개 URL의 배포 검증 상태는 [deployment.json](docs/deployment.json)에 기록합니다.
+
+2026-10-02 공개 HTTPS 주소에서 필터·추천 가중치·미사용 앱 제외·평가 화면을 직접 확인했습니다. [실제 라이브 화면 캡처](docs/screenshots/live-verified.jpg)를 함께 보관합니다. 자동화된 14개 브라우저 시나리오는 로컬 및 GitHub Actions에서 통과했습니다.
 
 ## 90초 동안 확인할 수 있는 것
 
@@ -109,5 +111,7 @@ npm run dev
 ## 배포·비용 조건
 
 Render Static Site에 `dist`만 배포합니다. 유료 웹 서버, DB, AI API, 도메인을 생성하지 않습니다. 자동 배포는 꺼두고 검증된 변경만 수동 배포합니다. 정적 사이트도 워크스페이스의 대역폭·빌드 사용량 한도에 합산되므로 **영구적인 무제한 0원은 보장하지 않습니다**. 카드 등록이나 유료 플랜 변경은 수행하지 않습니다. [운영·무료 범위 조건](docs/operations.md)
+
+배포 후 Dashboard가 로그인 화면으로 연결되어 결제수단 및 사용량 초과 과금 차단 설정은 확인하지 못했습니다. 서비스 자체는 무료 정적 사이트이며, 계정 수준의 과금 방지 설정은 별도 확인이 필요합니다.
 
 MIT · Noto Sans KR는 SIL Open Font License로 번들링하며 [글꼴 라이선스](docs/font-license.txt)를 포함합니다.

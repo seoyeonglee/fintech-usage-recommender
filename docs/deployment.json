@@ -1,0 +1,42 @@
+{
+  "verifiedAt": "2026-10-02",
+  "url": "https://seoyoung-finscope.onrender.com/",
+  "repository": "https://github.com/seoyeonglee/fintech-usage-recommender",
+  "provider": "Render",
+  "serviceType": "static_site",
+  "serviceId": "srv-davpdl8u01pc73fla05g",
+  "deployId": "dep-davpdlou01pc73fla1eg",
+  "deployedCodeCommit": "6b294d4c650402b74becc72e79fa4a58c2c72f48",
+  "deployStatus": "live",
+  "autoDeploy": false,
+  "buildCommand": "npm ci --no-audit --no-fund && npm run build",
+  "publishPath": "dist",
+  "ci": {
+    "url": "https://github.com/seoyeonglee/fintech-usage-recommender/actions/runs/37001738868",
+    "conclusion": "success",
+    "domainTests": 18,
+    "browserScenarios": 14
+  },
+  "publicVerification": {
+    "method": "Signed-out browser on the public HTTPS URL",
+    "checks": [
+      "Overview loads with bundled Korean font and 320 active users",
+      "Cohort and period filters recalculate usage aggregates",
+      "Native keyboard changes to recommendation weights recalculate scores",
+      "Unseen-app filter excludes previously used apps",
+      "Evaluation displays committed metrics and confidence intervals",
+      "Settings restored to the default overview after checks"
+    ],
+    "screenshot": "screenshots/live-verified.jpg",
+    "automatedPublicSuite": "Not completed in the execution container because Chromium could not reach the public host. The 14 automated scenarios passed locally and in GitHub Actions; the public deployment was separately checked in a browser."
+  },
+  "costScope": {
+    "created": ["One free Render Static Site"],
+    "paidResourcesCreated": false,
+    "paymentMethodChanged": false,
+    "externalPaidApis": false,
+    "billingGuardVerified": false,
+    "limitation": "Render Dashboard redirected to sign-in, so payment method and overage/spending guard settings were not inspected. Shared bandwidth and build quotas apply; indefinite zero charges cannot be guaranteed. See operations.md."
+  },
+  "data": "Synthetic demonstration data; no real bank accounts or customer records."
+}
